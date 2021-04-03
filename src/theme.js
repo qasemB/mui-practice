@@ -8,11 +8,6 @@ const theme = createMuiTheme({
     fontFamily: "BYekan",
   },
   palette: {
-    primary: {
-      light: purple[200],
-      main: purple[500],
-      dark: purple[800],
-    },
     secondary: {
       main: green[500],
     },

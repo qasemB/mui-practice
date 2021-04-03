@@ -1,12 +1,17 @@
 import React from "react";
-import { Button, makeStyles, Typography } from "@material-ui/core";
-import { StylesProvider, jssPreset } from "@material-ui/core/styles";
+import { Button, Grid, makeStyles, Typography } from "@material-ui/core";
+import { StylesProvider, jssPreset } from "@material-ui/styles";
 import { create } from "jss";
 import rtl from "jss-rtl";
+import Header from "./components/Header";
+import Content from "./components/Content";
 
 const useStyle = makeStyles({
   mystyle: {
     fontStyle: "oblique",
+  },
+  content: {
+    marginTop: "10px",
   },
 });
 
@@ -16,15 +21,18 @@ const App = () => {
   const classes = useStyle();
   return (
     <StylesProvider jss={jss}>
-      <div className="App">
-        <Typography className={classes.mystyle} color="secondary" variant="h1">
-          سلام
-        </Typography>
-        <h1>سلام</h1>
-        <Button fullWidth variant="contained" color="primary">
-          دکمه ورود
-        </Button>
-      </div>
+      <Grid container direction="column">
+        <Grid item>
+          <Header />
+        </Grid>
+        <Grid item container className={classes.content}>
+          <Grid item xs={0} sm={2} />
+          <Grid item xs={12} sm={8}>
+            <Content />
+          </Grid>
+          <Grid item xs={0} sm={2} />
+        </Grid>
+      </Grid>
     </StylesProvider>
   );
 };
