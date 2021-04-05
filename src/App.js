@@ -23,7 +23,7 @@ const App = () => {
     <StylesProvider jss={jss}>
       <Grid container direction="column">
         <Grid item>
-          <Header />
+          <Header cool={false} />
         </Grid>
         <Grid item container className={classes.content}>
           <Grid item xs={0} sm={2} />
